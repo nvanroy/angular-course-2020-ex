@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from './domain/product';
-import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'jworks-products',
@@ -9,16 +7,9 @@ import { ProductService } from './services/product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  public data: Product[] = [];
-
-  selectedProduct: Product;
-
-  constructor(private productService: ProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(products => {
-      this.data = products;
-    });
   }
 
   onFormSubmit(product: Product) {
